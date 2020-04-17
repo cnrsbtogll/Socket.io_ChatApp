@@ -51,12 +51,14 @@ mongoose.connect(mongoDB,{ useNewUrlParser: true, useUnifiedTopology: true },fun
           // Send error status
           sendStatus("Please enter a name and message");
         } else {
-
+            var date=new Date();
+            var now_utc=Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(),
+            date.getUTCHours()+3, date.getUTCMinutes(), date.getUTCSeconds())
           // Create Mongoose Shema
           var ChatShema=new mongoose.Schema({
               name:String,
               message:String,
-              msg_time: {type:Date, default:Date.now}
+              msg_time: {type:Date, default:now_utc}
           })
           //Create Model 
           var Chat=mongoose.model("Chat",ChatShema)

@@ -6,4 +6,4 @@
 
 3- Run Server. With this command "npm start"
 
-4- Run App. Open "index.html"
+4- Run App. Open "localhost:3000" 
